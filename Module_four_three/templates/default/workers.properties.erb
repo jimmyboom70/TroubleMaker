@@ -1,0 +1,7 @@
+workers.apache_log=<%= node[:mod_jk][:worker_path] %>
+worker.list=<%= node[:mod_jk][:worker_names] %> 
+#worker.stat1.type=status
+worker.worker1.type=<%= node[:mod_jk][:worker_type] %>
+worker.worker1.host=<%= node[:mod_jk][:worker_host] %>
+worker.worker1.port=<%= node[:mod_jk][:worker_port] %>
+

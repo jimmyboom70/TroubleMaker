@@ -1,0 +1,10 @@
+<VirtualHost *:80>
+    ServerName <%= node[:mod_jk][:worker_host] %>
+    ServerAdmin <%= node[:mod_jk][:worker_serveradmin] %>
+    LogFormat "%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-agent}i\"" combined
+    CustomLog <%= node[:mod_jk][:customlog] %> combined
+    ErrorLog <%= node[:mod_jk][:errorlog] %>
+    <IfModule mod_jk.c>
+       JkMount /* worker1
+    </IfModule>
+</VirtualHost>
